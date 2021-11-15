@@ -22,7 +22,7 @@
                 $Password = "'$Pass'";
                 $res = $stmt->execute();
                 if ($res) {
-                    echo "Welcome page";
+                    header("Location:welcome.php");
                 }
                 else {
                     echo "Login failed ";
