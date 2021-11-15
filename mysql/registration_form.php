@@ -25,7 +25,7 @@
                 }
                 $sql = "INSERT INTO table1(First_Name,Last_Name,Gender,Dob,Religion,Present_Address,Permanent_Address,Phone,Email,Website,Username,Password) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("sssdsssisssi",$First_Name,$Last_Name,$Gender,$Dob,$Religion,$Present_Address,$Permanent_Address,$Phone,$Email,$Website,$Username,$Password);
+                $stmt->bind_param("sssssssissss",$First_Name,$Last_Name,$Gender,$Dob,$Religion,$Present_Address,$Permanent_Address,$Phone,$Email,$Website,$Username,$Password);
                 
                 $First_Name= "'$fname '";
                 $Last_Name="'$lname'";
