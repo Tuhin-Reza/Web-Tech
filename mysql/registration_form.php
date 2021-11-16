@@ -3,8 +3,8 @@
     	$fname =validation( $_POST['fname']);
 	 	$lname =validation($_POST['lname']);
 	 	$gender=validation($_POST["gender"]);
-	 	$birDate=validation($_POST["birDate"]);
-	 	$Relegion=validation($_POST["Relegion"]);
+	 	$birDate=validation($_POST["birDate"]);      
+ 	 	$Relegion=validation($_POST["Relegion"]);
 	 	$PresentAddress=validation($_POST["PresentAddress"]);
 	 	$PermanentAddress=validation($_POST["PermanentAddress"]);
 	 	$Phone=validation($_POST["Phone"]);
@@ -13,39 +13,39 @@
 	    $uname=validation($_POST["uname"]);
 	 	$pass=validation($_POST["psw"]);
     	if (isset($_POST['submit'])){
-    			$servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "registration";
+    		$servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "registration";
 
-                $conn = new mysqli($servername, $username, $password, $dbname);
+            $conn = new mysqli($servername, $username, $password, $dbname);
 
-                if ($conn->connect_error) {
-                	die("Connection failed: " . $conn->connect_error);
-                }
-                $sql = "INSERT INTO table1(First_Name,Last_Name,Gender,Dob,Religion,Present_Address,Permanent_Address,Phone,Email,Website,Username,Password) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
-                $stmt = $conn->prepare($sql);
-                $stmt->bind_param("sssssssissss",$First_Name,$Last_Name,$Gender,$Dob,$Religion,$Present_Address,$Permanent_Address,$Phone,$Email,$Website,$Username,$Password);
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            $sql = "INSERT INTO table1(First_Name,Last_Name,Gender,DoB,Religion,Present_Address,Permanent_Address,Phone,Email,Website,Username,Password) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssssssssssss",$First_Name,$Last_Name,$Gender,$DoB,$Religion,$Present_Address,$Permanent_Address,$Phone,$Email,$Website,$Username,$Password);
                 
-                $First_Name= "'$fname '";
-                $Last_Name="'$lname'";
-                $Gender="'$gender'";
-                $Dob="'$birDate'";
-                $Religion="'$Relegion'";
-                $Present_Address="'$PresentAddress'";
-                $Permanent_Address="'	$PermanentAddress'";
-                $Phone="'$Phone'";
-                $Email="'$Email'";
-                $Website="'	$website'";
-                $Username = "'$uname'";
-                $Password = "'$pass'";
-                $res = $stmt->execute();
-                if ($res) {
-                	header("Location:login_Form.php");
-                }
-                else {
-                	echo "Failed to insert data";
-                }
+            $First_Name= "'$fname '";
+            $Last_Name="'$lname'";
+            $Gender="'$gender'";
+            $DoB="'$birDate'";
+            $Religion="'$Relegion'";
+            $Present_Address="'$PresentAddress'";
+            $Permanent_Address="'	$PermanentAddress'";
+            $Phone="'$Phone'";
+            $Email="'$Email'";
+            $Website="'	$website'";
+            $Username = "'$uname'";
+            $Password = "'$pass'";
+            $res = $stmt->execute();
+            if ($res) {
+                header("Location:login_Form.php");
+            }
+            else {
+                echo "Failed to insert data";
+            }
     	}
     }
     function validation($data) {
