@@ -1,5 +1,5 @@
 <?php 
-    $message="";
+    $message=$failed=" ";
     if ($_SERVER['REQUEST_METHOD']==="POST") {
         $Uname=validation($_POST["username"]);
         $Pass=validation($_POST["psw"]);
@@ -17,15 +17,24 @@
                 }
                 $sql = "SELECT  * FROM table1 WHERE Username = ? and Password = ?";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("ss",$username,$password, );
+                $stmt->bind_param("ss",$Username,$Password, );
                 $Username = "'$Uname'";
                 $Password = "'$Pass'";
                 $res = $stmt->execute();
                 if ($res) {
-                    header("Location:welcome.php");
+                    $data = $stmt->get_result();
+                    if ($data->num_rows > 0) {
+                        while ($row = $data->fetch_assoc()) {
+                            header("Location:welcome.php");
+                            echo "<br>";
+                        }
+                    }
+                    else {
+                        $failed="Login failed ";
+                    }
                 }
                 else {
-                    echo "Login failed ";
+                    echo "Error while executing the statement";
                 }
             }
         }
@@ -58,6 +67,7 @@
             <input type='submit' name='submit' value='Sign in' >
         </form>       
     </fieldset>
+    <span class="error"> <?php echo $failed;?></span><br> 
    
 </body>
 </html>
