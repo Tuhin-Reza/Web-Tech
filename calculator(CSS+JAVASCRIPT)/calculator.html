@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="calculator.js" defer></script>
+     <link rel="stylesheet" href="calculator.css">
+
+    <title>Basic Calculator</title>
+</head>
+<body>
+    <div class="wrap">
+        <fieldset>      
+            <input type="text" name="Display" id="Display"><br>
+
+            <input id="clear" type="button" value="C" onclick="DeleteMe()">
+            <input type="button" value="/" onclick="calculator('/')">
+            <input type="button" value="*" onclick="calculator('*')">
+            <input type="button" value="-" onclick="calculator('-')"><br>
+
+            <input type="button" value="7" onclick="calculator('7')">
+            <input type="button" value="8" onclick="calculator('8')">
+            <input type="button" value="9" onclick="calculator('9')">
+            <input id="plus" type="button" value="+" onclick="calculator('+')"><br>
+
+            <input type="button" value="4" onclick="calculator('4')">
+            <input type="button" value="5" onclick="calculator('5')">
+            <input type="button" value="6" onclick="calculator('6')"><br>
+
+            <input type="button" value="1" onclick="calculator('1')">
+            <input type="button" value="2" onclick="calculator('2')">
+            <input type="button" value="3" onclick="calculator('3')">
+            <input id="equal" type="button" value="=" onclick="Answer()"><br>
+          
+
+            <input type="button" value="0" onclick="calculator('0')">
+            <input type="button" value="." onclick="calculator('.')">
+            <input type="button" value="00" onclick="calculator('00')">
+            
+        </fieldset> 
+                 
+    </div>
+</body>
+</html>
