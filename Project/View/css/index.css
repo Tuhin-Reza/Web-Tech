@@ -1,0 +1,113 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  padding-bottom: 58px;
+  min-height: 100vh; 
+}
+
+/*Nabigation Bar*/
+ul {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  margin-left: 960px;
+  margin-top: 15px;
+  border: 2px solid yellow;
+  border-radius: 5px;
+}
+li {
+  float: right;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+li a:hover:not(.active) {
+  background-color: #C0C0C0;
+  border-radius: 5px;
+}
+.active {
+  background-color: #C0C0C0;
+  border-radius: 5px;
+}
+header { 
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 50px;
+  color: red;
+  background-image: url(../image/header.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 150px; 
+  margin-left: 5px; 
+  margin-right:5px ; 
+}
+main {
+  background-image: url(../image/main.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 500;
+  height: 100%;
+  margin: 0 auto;
+  padding: 30px 20px;
+  margin-bottom: 360px;
+  margin-left: 5px; 
+  margin-right:5px ; 
+}
+article{
+    padding: 20px;
+    margin-left: 150px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 800px;
+    height: 500px;
+    margin-bottom: 200px;
+    margin-left: 2px;
+}
+h4{
+   font-weight: bold;
+   font-size: 30px;
+   color: red;
+}
+.newspaper2{
+  column-count: 3;
+  font-weight: bold;
+  font-size: 15px;
+  color: #7FFF00;
+}
+.ab{
+  margin-top: 50px;
+  margin-left: 220px;
+}
+footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  position: absolute;
+  padding-top: 100px;
+  margin-left: 5px;
+  margin-right:20px ; 
+  bottom: 0;
+  width: 1340px;
+}
+.newspaper {
+  column-count: 3;
+}
